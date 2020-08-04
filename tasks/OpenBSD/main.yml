@@ -28,19 +28,7 @@
     state: present
   loop:
     - bash
-    - ruby%2.3
-
-- name: Get the current version of rubygems
-  tags: setup
-  command: /usr/local/bin/gem23 --version
-  check_mode: no
-  register: gem23_version
-  changed_when: False
-
-- name: Update rubygems to work around rubygems/rubygems/issues/1448
-  tags: setup
-  command: /usr/local/bin/gem23 update --system
-  when: gem23_version.stdout is version('2.5.3', '<')
+    - ruby%2.5
 
 - name: Install sensu gem and all of its dependencies
   tags: setup
@@ -49,7 +37,7 @@
     repository: "{{ sensu_gem_repository | default('https://api.rubygems.org/') }}"
     user_install: no
     version: "{{ sensu_gem_version }}"
-    executable: /usr/local/bin/gem23
+    executable: /usr/local/bin/gem25
 
 - name: Create the sensu log folder
   tags: setup

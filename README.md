@@ -54,7 +54,7 @@ This role requires:
 ### Supported manually (compatibility not always guaranteed)
 - [SmartOS - base-64 15.x.x](https://docs.joyent.com/images/smartos/base#version-15xx)
 - [FreeBSD - 10.3, 11.0 (64-bit only)](https://www.freebsd.org/releases/10.2R/relnotes.html)
-- [OpenBSD - 6.2](https://www.openbsd.org/62.html)
+- [OpenBSD - 6.7](https://www.openbsd.org/67.html)
 
 ## Role Variables
 
