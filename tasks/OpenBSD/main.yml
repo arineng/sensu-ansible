@@ -22,7 +22,7 @@
       state: present
     with_items:
       - bash
-      - ruby%2.4
+      - ruby%2.5
 
   - name: Install sensu gem and all of its dependencies
     gem:
@@ -30,7 +30,7 @@
       repository: "{{ sensu_gem_repository | default('https://api.rubygems.org/')}}"
       user_install: no
       version: "{{ sensu_gem_version }}"
-      executable: /usr/local/bin/gem24
+      executable: /usr/local/bin/gem25
 
   - name: Create the sensu log folder
     file:
